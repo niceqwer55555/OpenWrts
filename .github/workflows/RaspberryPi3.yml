@@ -8,6 +8,7 @@ env:
   OPNAME: 'Raspberry Pi3B+'
   REPO_URL: https://github.com/niceqwer55555/lede
   REPO_BRANCH: master
+  REPO_TAG: 20211107
   FEEDS_CONF: feeds.conf.default
   EXTERNAL_FILE: configs/luci/Standard.config
   CONFIG_FILE: configs/RPi3B.config
@@ -44,7 +45,7 @@ jobs:
       working-directory: /mnt/workdir
       run: |
         df -hT $PWD
-        git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
+        git clone -b $REPO_TAG --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
         ln -sf /mnt/workdir/openwrt $GITHUB_WORKSPACE/openwrt
 
     - name: Cache
