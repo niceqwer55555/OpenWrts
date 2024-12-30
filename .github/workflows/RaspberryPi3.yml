@@ -27,6 +27,9 @@ jobs:
     runs-on: ubuntu-20.04
 
     steps:
+    - name: 获取分支名称
+      id: branch-names
+      uses: tj-actions/branch-names@v8
     - name: Checkout
       uses: actions/checkout@v4
     - name: Initialization environment
