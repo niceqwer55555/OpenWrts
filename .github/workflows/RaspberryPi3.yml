@@ -44,7 +44,10 @@ jobs:
       working-directory: /mnt/workdir
       run: |
         df -hT $PWD
-        git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
+        git clone --depth 1 $REPO_URL  openwrt
+        cd openwrt
+        git checkout $REPO_BRANCH
+        cd ..
         ln -sf /mnt/workdir/openwrt $GITHUB_WORKSPACE/openwrt
 
     - name: Cache
