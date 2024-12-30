@@ -7,7 +7,7 @@ on:
 env:
   OPNAME: 'Raspberry Pi3B+'
   REPO_URL: https://github.com/niceqwer55555/lede
-  REPO_BRANCH: 20211107
+  REPO_BRANCH: 20230609
   FEEDS_CONF: feeds.conf.default
   EXTERNAL_FILE: configs/luci/Standard.config
   CONFIG_FILE: configs/RPi3B.config
