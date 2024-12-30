@@ -3,6 +3,9 @@ name: Raspberry Pi3B+
 on:
   repository_dispatch:
   workflow_dispatch:
+  push:
+    tags:
+    - '*'
 
 env:
   OPNAME: 'Raspberry Pi3B+'
@@ -26,8 +29,6 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v4
-      with:
-        ref: ${{ github.event.release.tag_name }}
     - name: Initialization environment
       env:
         DEBIAN_FRONTEND: noninteractive
